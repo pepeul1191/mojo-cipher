@@ -29,6 +29,4 @@ Para imprimir variables:
 + http://stackoverflow.com/questions/10342875/how-to-properly-use-the-try-catch-in-perl-that-error-pm-provides
 + http://search.cpan.org/~ether/Try-Tiny-0.27/lib/Try/Tiny.pm
 + http://stackoverflow.com/questions/20869123/json-decoding-in-perl
-+ http://search.cpan.org/dist/Crypt-CBC/CBC.pm
-
-Crypt::CBC
++ http://www.perlmonks.org/?node_id=973693
