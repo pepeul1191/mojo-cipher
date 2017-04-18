@@ -19,6 +19,21 @@ get '/' => sub {
     $self->render(text => $decrypted);
 };
 
+post '/encode' => sub {
+    my $self = shift;
+    #inicio hook CORS
+    $self->res->headers->header('Access-Control-Allow-Origin' => '*');
+    $self->res->headers->header('x-powered-by' => 'Mojolicious (Perl)');
+	#fin hook CORS
+    my $key = $self->req->param('key');
+    my $texto = $self->req->param('texto');
+    my $encrypted = RC4($key, $texto);
+    my $encoded = encode_base64($encrypted);
+    
+    $self->render(text => $encoded);
+};
+
+
 get '/key' => sub {
     my $self = shift;
     #inicio hook CORS
