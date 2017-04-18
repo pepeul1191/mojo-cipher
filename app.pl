@@ -9,7 +9,7 @@ get '/' => sub {
     $self->res->headers->header('Access-Control-Allow-Origin' => '*');
     $self->res->headers->header('x-powered-by' => 'Mojolicious (Perl)');
 	#fin hook CORS
-    $self->render(text => "Error : URI vacía";);
+    $self->render(text => "Error : URI vacía");
 };
 
 post '/encode' => sub {
