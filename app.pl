@@ -9,14 +9,7 @@ get '/' => sub {
     $self->res->headers->header('Access-Control-Allow-Origin' => '*');
     $self->res->headers->header('x-powered-by' => 'Mojolicious (Perl)');
 	#fin hook CORS
-    my $key       = "abcdefghijklm";
-    my $plaintext = "Error : URI vacía";
-    my $encrypted = RC4($key, $plaintext);
-    my $encoded = encode_base64($encrypted);
-    my $decoded = decode_base64($encoded);
-    my $decrypted = RC4($key, $decoded);
-    
-    $self->render(text => $decrypted);
+    $self->render(text => "Error : URI vacía";);
 };
 
 post '/encode' => sub {
