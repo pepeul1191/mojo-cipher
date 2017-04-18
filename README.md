@@ -10,7 +10,8 @@ Microservicio de Perl - Mojo para la encriptación y desencriptado de strings
 
 ### Instalar Crypt::CBC para Perl
 
-    $ sudo cpanm Crypt::CBC
+    $ sudo cpanm Crypt::RC4;
+    $ sudo cpanm MIME::Base64;
 
 ### Arrancar el microservicio
 
