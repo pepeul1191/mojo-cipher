@@ -33,6 +33,19 @@ post '/encode' => sub {
     $self->render(text => $encoded);
 };
 
+post '/decode' => sub {
+    my $self = shift;
+    #inicio hook CORS
+    $self->res->headers->header('Access-Control-Allow-Origin' => '*');
+    $self->res->headers->header('x-powered-by' => 'Mojolicious (Perl)');
+	#fin hook CORS
+    my $key = $self->req->param('key');
+    my $texto = $self->req->param('texto');
+    my $decoded = decode_base64($texto);
+    my $decrypted = RC4($key, $decoded);
+    
+    $self->render(text => $decrypted);
+};
 
 get '/key' => sub {
     my $self = shift;
